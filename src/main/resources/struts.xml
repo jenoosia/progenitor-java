@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.action.excludePattern" value="/static/.*"/>
+    <constant name="struts.action.extension" value=","/>
+    <constant name="struts.mapper.alwaysSelectFullNamespace" value="false"/>
+    <constant name="struts.enable.SlashesInActionNames" value="true"/>
+    
+    <constant name="struts.convention.action.disableScanning" value="true"/>
+    <constant name="struts.convention.package.locators.disable" value="true"/>
+    
+    <constant name="struts.custom.i18n.resources" value="messages" />
+    <constant name="struts.i18n.encoding" value="UTF-8" />
+    <constant name="struts.multipart.maxSize" value="2097152" /><!-- 2MB -->
+    
+    <!-- For JBoss -->
+    <constant name="struts.convention.exclude.parentClassLoader" value="true" />
+    <constant name="struts.convention.action.fileProtocols" value="jar,vfsfile,vfszip" />
+    
+    <!-- Default Package -->
+    <package name="default" namespace="/" extends="struts-default">
+        <action name=""> <!-- serves as a "welcome" or "index" redirect page -->
+            <result type="redirectAction">
+                <param name="actionName">main</param>
+            </result>
+        </action>
+
+        <action name="main" class="mainAction">
+            <result name="success">/index.html</result>
+        </action>
+    </package>
+    
+</struts>

@@ -1,0 +1,12 @@
+# Let Compass run and populate these. *
+.sass-cache/
+public/css/gen/*
+public/css/gen/**/*
+
+# Let Bower run and populate this. #
+components/**/*
+
+# Let NPM and Grunt run and populate this. #
+node_modules/
+public/js/vendor/*
+public/js/vendor/**/*

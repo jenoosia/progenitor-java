@@ -1,0 +1,16 @@
+@import "compass";
+
+/* Make everything border-box for a saner layout. */
+* { @include box-sizing(border-box); }
+
+body {
+    font-family: $content-font;
+    font-weight: $thin;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    color: $dark-text-color;
+}
+
+#{headings()} {
+    font-family: $header-font;
+}

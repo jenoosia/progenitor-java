@@ -1,0 +1,6 @@
+<jboss-web>
+    <context-root>/</context-root>
+    <!-- 
+    <virtual-host>hostname</virtual-host>
+     -->
+</jboss-web>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- For assistance related to logback-translator or configuration  -->
+<!-- files in general, please contact the logback user mailing list -->
+<!-- at http://www.qos.ch/mailman/listinfo/logback-user             -->
+<!--                                                                -->
+<!-- For professional support please see                            -->
+<!--    http://www.qos.ch/shop/products/professionalSupport         -->
+<!--                                                                -->
+<configuration>
+  <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%r | %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+  </appender>
+  
+  <!--See http://logback.qos.ch/manual/appenders.html#RollingFileAppender-->
+  <!--and http://logback.qos.ch/manual/appenders.html#TimeBasedRollingPolicy-->
+  <appender name="main" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <append>true</append>
+    <file>/Volumes/Data/mflg-log/mflg.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>/Volumes/Data/mflg-log/mflg.%d{yyyy-MM-dd}.zip</fileNamePattern>
+    </rollingPolicy>
+    <encoder>
+      <pattern>%r | %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+  </appender>
+  
+  <logger name="org.hibernate">
+    <level value="INFO"/>
+  </logger>
+  
+  <root level="DEBUG">
+    <appender-ref ref="stdout"/>
+    <appender-ref ref="main"/>
+  </root>
+</configuration>
