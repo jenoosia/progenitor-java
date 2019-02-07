@@ -1,3 +1,5 @@
+*OBSOLETE*
+
 # Progenitor/Java
 
 Progenitor/Java is a baseline web application template for server-side development.
